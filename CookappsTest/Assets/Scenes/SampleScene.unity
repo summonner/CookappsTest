@@ -374,6 +374,7 @@ MonoBehaviour:
     _x: 0
     _z: 5
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &139676277
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +420,7 @@ MonoBehaviour:
     _x: -3
     _z: 3
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &146590607
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +466,7 @@ MonoBehaviour:
     _x: 1
     _z: 1
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +650,7 @@ MonoBehaviour:
     _x: -1
     _z: 3
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &218245145
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +696,7 @@ MonoBehaviour:
     _x: 3
     _z: 2
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &282640263
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +814,7 @@ MonoBehaviour:
     _x: -1
     _z: 4
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &330269645
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +860,7 @@ MonoBehaviour:
     _x: -1
     _z: 1
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &370244295
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +906,7 @@ MonoBehaviour:
     _x: -2
     _z: 4
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &400106706
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +952,7 @@ MonoBehaviour:
     _x: 2
     _z: 3
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &401269916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,6 +1142,7 @@ MonoBehaviour:
     _x: -3
     _z: 4
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1265,7 @@ MonoBehaviour:
     _x: 3
     _z: 0
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &591241395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1311,7 @@ MonoBehaviour:
     _x: 0
     _z: 3
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &611258117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1357,7 @@ MonoBehaviour:
     _x: 2
     _z: 2
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &612982987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1403,7 @@ MonoBehaviour:
     _x: 1
     _z: 2
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &745062147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,6 +2025,7 @@ MonoBehaviour:
     _x: 2
     _z: 0
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &941083171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,6 +2215,7 @@ MonoBehaviour:
     _x: -2
     _z: 5
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &1052658043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,6 +2261,7 @@ MonoBehaviour:
     _x: -2
     _z: 2
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &1055260070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,6 +2451,7 @@ MonoBehaviour:
     _x: 0
     _z: 2
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &1201007298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,6 +2641,7 @@ MonoBehaviour:
     _x: -1
     _z: 2
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &1519563937
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +2687,7 @@ MonoBehaviour:
     _x: 1
     _z: 3
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &1545959203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,6 +2805,7 @@ MonoBehaviour:
     _x: 1
     _z: 4
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &1604795378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +2851,7 @@ MonoBehaviour:
     _x: 0
     _z: 4
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &1610772455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2839,6 +2861,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1610772457}
   - component: {fileID: 1610772456}
+  - component: {fileID: 1610772458}
+  - component: {fileID: 1610772459}
+  - component: {fileID: 1610772460}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2905,6 +2930,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1610772458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1610772455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67d9686b2a88dd45acc8bf79eb520d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 1610772460}
+--- !u!114 &1610772459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1610772455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2b3370f9048564795ecad6f5899e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animTime: 0.05
+--- !u!114 &1610772460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1610772455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8847553e3779834aaf0f60c0f4f6b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  templates:
+  - {fileID: 114471226642605904, guid: e7ca0d2ece251fe4e99ccd52729494f2, type: 2}
+  spawnDelay: 0.1
+  cell: {fileID: 110620892}
 --- !u!1 &1625687127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,6 +3086,7 @@ MonoBehaviour:
     _x: 2
     _z: 1
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &1641332114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3132,7 @@ MonoBehaviour:
     _x: 0
     _z: 0
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &1643813705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,6 +3250,7 @@ MonoBehaviour:
     _x: -2
     _z: 3
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &1662173455
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,6 +3440,7 @@ MonoBehaviour:
     _x: 0
     _z: 1
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &1845865401
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,6 +3558,7 @@ MonoBehaviour:
     _x: 1
     _z: 0
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &1878339964
 GameObject:
   m_ObjectHideFlags: 0
@@ -3535,6 +3604,7 @@ MonoBehaviour:
     _x: -1
     _z: 5
   initialBlock: 1
+  block: {fileID: 0}
 --- !u!1 &1880078239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3724,6 +3794,7 @@ MonoBehaviour:
     _x: 3
     _z: 1
   initialBlock: 0
+  block: {fileID: 0}
 --- !u!1 &2052498972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3841,3 +3912,4 @@ MonoBehaviour:
     _x: -3
     _z: 5
   initialBlock: 0
+  block: {fileID: 0}
