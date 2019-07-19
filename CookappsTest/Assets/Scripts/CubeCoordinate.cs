@@ -53,10 +53,10 @@ public struct CubeCoordinate {
 	}
 
 	public override string ToString() {
-		return string.Format( "CubeCoord({0}, {1}, {2})", x, y, z );
+		return string.Format( "({0}, {1})", q, r );
 	}
 	
-	private static CubeCoordinate CubeRound( float q, float r ) {
+	public static CubeCoordinate CubeRound( float q, float r ) {
 		return CubeRound( q, -(q + r), r );
 	}
 

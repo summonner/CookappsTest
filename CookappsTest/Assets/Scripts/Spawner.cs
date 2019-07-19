@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
-	public Block[] templates;
+	public BlockFactory factory;
+	public int[] candidates = { 0 };
 	public float spawnDelay = 0.5f;
 	public Cell cell;
 
@@ -12,18 +13,8 @@ public class Spawner : MonoBehaviour {
 			return null;
 		}
 
-		var block = NewBlock( templates[Random.Range( 0, templates.Length )] );
+		var block = factory.Generate( candidates[Random.Range( 0, candidates.Length )] );
 		block.Set( cell );
 		return cell;
 	}
-
-	private static Block NewBlock( Block blockTemplate ) {
-		var block = Instantiate( blockTemplate );
-		var transform = block.transform;
-		transform.position = Vector3.zero;
-		transform.rotation = Quaternion.identity;
-		transform.localScale = Vector3.one;
-		return block;
-	}
-
 }

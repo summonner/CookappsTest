@@ -45,14 +45,28 @@ public class HexagonalGridBuilder : MonoBehaviour {
 		return trans;
 	}
 
+	private Vector2 spacing {
+		get {
+			return new Vector2(
+				(cellRadius * 1.5f + gap),
+				cellRadius * Mathf.Sqrt( 3 ) + gap
+			);
+		}
+	}
+
 	public Vector3 Hex2World( CubeCoordinate hex ) {
-		var horizontalSpacing = (cellRadius * 1.5f + gap);
-		var verticalSpacing = cellRadius * Mathf.Sqrt( 3 ) + gap;
+		var spacing = this.spacing;
 		Vector3 position;
-		position.y = verticalSpacing * (hex.z + 0.5f * hex.x);
-		position.x = horizontalSpacing * hex.x;
+		position.y = spacing.y * (hex.z + 0.5f * hex.x);
+		position.x = spacing.x * hex.x;
 		position.z = 0;
 		return position;
 	}
 
+	public CubeCoordinate World2Hex( Vector3 world ) {
+		var spacing = this.spacing;
+		var x = world.x / spacing.x;
+		var z = world.y / spacing.y - 0.5f * x;
+		return CubeCoordinate.CubeRound( x, z );
+	}
 }

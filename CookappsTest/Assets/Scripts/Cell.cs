@@ -20,6 +20,6 @@ public class Cell : MonoBehaviour {
 		BlockMover.instance.Move( cell.block, cell );
 
 		this.block = temp;
-		BlockMover.instance.Move( block, cell );
+		BlockMover.instance.Move( block, this );
 	}
 }
