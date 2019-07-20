@@ -5,8 +5,12 @@ using UnityEngine;
 [SelectionBase]
 public class Cell : MonoBehaviour {
 	public enum InitialBlockType {
-		Normal = 0,
-		Top,
+		Top = 0,
+		Red,
+		Yellow,
+		Green,
+		Blue,
+		Magenta,
 	}
 
 	public CubeCoordinate position;

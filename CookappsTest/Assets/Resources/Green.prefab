@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4214877094749244}
   - component: {fileID: 114471226642605904}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d9e8592965fe8364db18c1bbb6344f17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff36c9c325f58d64d850e13e3f077ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animTime: 0.5
+  color: 3

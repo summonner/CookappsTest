@@ -373,7 +373,7 @@ MonoBehaviour:
   position:
     _x: 0
     _z: 5
-  initialBlock: 0
+  initialBlock: 4
   block: {fileID: 0}
 --- !u!1 &139676277
 GameObject:
@@ -419,7 +419,7 @@ MonoBehaviour:
   position:
     _x: -3
     _z: 3
-  initialBlock: 0
+  initialBlock: 4
   block: {fileID: 0}
 --- !u!1 &146590607
 GameObject:
@@ -465,7 +465,7 @@ MonoBehaviour:
   position:
     _x: 1
     _z: 1
-  initialBlock: 0
+  initialBlock: 1
   block: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
@@ -649,7 +649,7 @@ MonoBehaviour:
   position:
     _x: -1
     _z: 3
-  initialBlock: 0
+  initialBlock: 1
   block: {fileID: 0}
 --- !u!1 &218245145
 GameObject:
@@ -695,7 +695,7 @@ MonoBehaviour:
   position:
     _x: 3
     _z: 2
-  initialBlock: 0
+  initialBlock: 2
   block: {fileID: 0}
 --- !u!1 &282640263
 GameObject:
@@ -813,7 +813,7 @@ MonoBehaviour:
   position:
     _x: -1
     _z: 4
-  initialBlock: 1
+  initialBlock: 3
   block: {fileID: 0}
 --- !u!1 &330269645
 GameObject:
@@ -859,7 +859,7 @@ MonoBehaviour:
   position:
     _x: -1
     _z: 1
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &370244295
 GameObject:
@@ -905,7 +905,7 @@ MonoBehaviour:
   position:
     _x: -2
     _z: 4
-  initialBlock: 1
+  initialBlock: 5
   block: {fileID: 0}
 --- !u!1 &400106706
 GameObject:
@@ -951,7 +951,7 @@ MonoBehaviour:
   position:
     _x: 2
     _z: 3
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &401269916
 GameObject:
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   position:
     _x: -3
     _z: 4
-  initialBlock: 0
+  initialBlock: 3
   block: {fileID: 0}
 --- !u!1 &534669902
 GameObject:
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   position:
     _x: 3
     _z: 0
-  initialBlock: 0
+  initialBlock: 4
   block: {fileID: 0}
 --- !u!1 &591241395
 GameObject:
@@ -1373,7 +1373,7 @@ MonoBehaviour:
   position:
     _x: 2
     _z: 2
-  initialBlock: 0
+  initialBlock: 5
   block: {fileID: 0}
 --- !u!1 &612982987
 GameObject:
@@ -1419,7 +1419,7 @@ MonoBehaviour:
   position:
     _x: 1
     _z: 2
-  initialBlock: 0
+  initialBlock: 3
   block: {fileID: 0}
 --- !u!1 &688517042
 GameObject:
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   position:
     _x: 2
     _z: 0
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &941083171
 GameObject:
@@ -2272,7 +2272,7 @@ MonoBehaviour:
   position:
     _x: -2
     _z: 5
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &1052658043
 GameObject:
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   position:
     _x: -2
     _z: 2
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &1055260070
 GameObject:
@@ -2508,7 +2508,7 @@ MonoBehaviour:
   position:
     _x: 0
     _z: 2
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &1201007298
 GameObject:
@@ -2760,7 +2760,7 @@ MonoBehaviour:
   position:
     _x: -1
     _z: 2
-  initialBlock: 0
+  initialBlock: 2
   block: {fileID: 0}
 --- !u!1 &1519563937
 GameObject:
@@ -2806,7 +2806,7 @@ MonoBehaviour:
   position:
     _x: 1
     _z: 3
-  initialBlock: 0
+  initialBlock: 4
   block: {fileID: 0}
 --- !u!1 &1545959203
 GameObject:
@@ -2908,7 +2908,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   templates:
+  - {fileID: 114207966407393352, guid: f1bc266078f600849b065275af533228, type: 2}
   - {fileID: 114471226642605904, guid: e7ca0d2ece251fe4e99ccd52729494f2, type: 2}
+  - {fileID: 114471226642605904, guid: 5ffc56aecce957c43a99d19fb282ff4c, type: 2}
+  - {fileID: 114471226642605904, guid: 7c729ed2bbc95a743820692b60905f48, type: 2}
+  - {fileID: 114471226642605904, guid: 5f613c27c13337e4cb71aa7229ec819b, type: 2}
+  - {fileID: 114471226642605904, guid: 6e3a4f040528c5c409b48f5684f3299d, type: 2}
 --- !u!4 &1562716639
 Transform:
   m_ObjectHideFlags: 0
@@ -2966,7 +2971,7 @@ MonoBehaviour:
   position:
     _x: 1
     _z: 4
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &1604795378
 GameObject:
@@ -3012,7 +3017,7 @@ MonoBehaviour:
   position:
     _x: 0
     _z: 4
-  initialBlock: 1
+  initialBlock: 3
   block: {fileID: 0}
 --- !u!1 &1610772455
 GameObject:
@@ -3144,7 +3149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factory: {fileID: 1562716638}
   candidates: 00000000
-  spawnDelay: 0.1
+  spawnDelay: 0.15
   cell: {fileID: 110620892}
 --- !u!1 &1625687127
 GameObject:
@@ -3262,7 +3267,7 @@ MonoBehaviour:
   position:
     _x: 2
     _z: 1
-  initialBlock: 0
+  initialBlock: 5
   block: {fileID: 0}
 --- !u!1 &1641332114
 GameObject:
@@ -3308,7 +3313,7 @@ MonoBehaviour:
   position:
     _x: 0
     _z: 0
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &1643813705
 GameObject:
@@ -3426,7 +3431,7 @@ MonoBehaviour:
   position:
     _x: -2
     _z: 3
-  initialBlock: 0
+  initialBlock: 5
   block: {fileID: 0}
 --- !u!1 &1662173455
 GameObject:
@@ -3616,7 +3621,7 @@ MonoBehaviour:
   position:
     _x: 0
     _z: 1
-  initialBlock: 0
+  initialBlock: 5
   block: {fileID: 0}
 --- !u!1 &1845865401
 GameObject:
@@ -3734,7 +3739,7 @@ MonoBehaviour:
   position:
     _x: 1
     _z: 0
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &1878339964
 GameObject:
@@ -3780,7 +3785,7 @@ MonoBehaviour:
   position:
     _x: -1
     _z: 5
-  initialBlock: 1
+  initialBlock: 0
   block: {fileID: 0}
 --- !u!1 &1880078239
 GameObject:
@@ -3970,7 +3975,7 @@ MonoBehaviour:
   position:
     _x: 3
     _z: 1
-  initialBlock: 0
+  initialBlock: 3
   block: {fileID: 0}
 --- !u!1 &2052498972
 GameObject:
@@ -4088,5 +4093,5 @@ MonoBehaviour:
   position:
     _x: -3
     _z: 5
-  initialBlock: 0
+  initialBlock: 2
   block: {fileID: 0}
