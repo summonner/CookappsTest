@@ -9,6 +9,9 @@ public class Board : MonoBehaviour, IBeginDragHandler, IDragHandler {
 	public BlockFactory factory;
 	public Spawner spawner;
 
+	public delegate void OnInputEvent( Input input );
+	public static event OnInputEvent OnInput = delegate { };
+
 	void Awake() {
 		foreach ( var child in GetComponentsInChildren<Cell>() ) {
 			map.Add( child.position, child );
@@ -25,19 +28,34 @@ public class Board : MonoBehaviour, IBeginDragHandler, IDragHandler {
 		block.Set( cell );
 	}
 
-	private void Start() {
-		StartCoroutine( Fill() );
-	}
+	public void Swap( Input input ) {
+		var source = input.selected;
+		var dest = input.second;
 
-	private IEnumerator Fill() {
-		yield return new WaitForSeconds( 1 );
-		Pull();
-		while ( spawner.Spawn() != null ) {
-			Pull();
-			yield return new WaitForSeconds( spawner.spawnDelay );
+		var isValid = map.ContainsKey( source )
+				   && map.ContainsKey( dest );
+		if ( isValid == false ) {
+			return;
 		}
 
-		yield return new WaitWhile( () => BlockMover.instance.isPlaying );
+		map[source].SwapBlock( map[dest] );
+		AnimScheduler.instance.Destroy( map[source].block );
+		AnimScheduler.instance.Destroy( map[dest].block );
+	}
+
+	public bool Match() {
+		return true;
+	}
+
+	public Coroutine Fill() {
+		return StartCoroutine( FillAux() );
+	}
+
+	private IEnumerator FillAux() {
+		do {
+			Pull();
+			yield return new WaitForSeconds( spawner.spawnDelay );
+		} while ( spawner.Spawn() != null );
 	}
 
 	private void Pull() {
@@ -84,20 +102,7 @@ public class Board : MonoBehaviour, IBeginDragHandler, IDragHandler {
 		var selected = converter.World2Hex( eventData.pointerPressRaycast.worldPosition - transform.position );
 		var drag = Vector3.Normalize( eventData.pointerCurrentRaycast.worldPosition - eventData.pointerPressRaycast.worldPosition );
 		var direction = converter.World2Hex( drag );
-		Swap( selected, direction );
-	}
-
-	private void Swap( CubeCoordinate selected, CubeCoordinate direction ) {
-		var source = selected;
-		var dest = selected + direction;
-
-		var isValid = map.ContainsKey( source )
-				   && map.ContainsKey( dest );
-		if ( isValid == false ) {
-			return;
-		}
-
-		map[source].SwapBlock( map[dest] );
+		OnInput( new Input( selected, direction ) );
 	}
 
 	public void OnDrag( PointerEventData eventData ) {

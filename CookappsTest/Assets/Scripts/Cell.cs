@@ -21,9 +21,9 @@ public class Cell : MonoBehaviour {
 	public void SwapBlock( Cell cell ) {
 		var temp = cell.block;
 		cell.block = block;
-		BlockMover.instance.Move( cell.block, cell );
+		AnimScheduler.instance.Move( cell.block, cell );
 
 		this.block = temp;
-		BlockMover.instance.Move( block, this );
+		AnimScheduler.instance.Move( block, this );
 	}
 }
