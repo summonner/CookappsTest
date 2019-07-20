@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -39,12 +40,72 @@ public class Board : MonoBehaviour, IBeginDragHandler, IDragHandler {
 		}
 
 		map[source].SwapBlock( map[dest] );
-		AnimScheduler.instance.Destroy( map[source].block );
-		AnimScheduler.instance.Destroy( map[dest].block );
 	}
 
 	public bool Match() {
-		return true;
+		var matched = new List<CubeCoordinate>();
+		foreach ( var cell in map.Values ) {
+			var skip = cell.block == null
+					|| cell.block.color <= 0;
+			if ( skip == true ) {
+				continue;
+			}
+
+			foreach ( var direction in pullDirection ) {
+				matched.AddRange( Match( cell, direction ) );
+			}
+		}
+
+		var splashes = new List<Cell>();
+		matched = matched.Distinct().ToList();
+		foreach ( var position in matched ) {
+			map[position].block.Destroy();
+			splashes.AddRange( FindSplashArea( position ) );
+		}
+
+		foreach ( var cell in splashes.Distinct() ) {
+			cell.block.Splash();
+		}
+
+		return matched.Count > 0;
+	}
+
+	private IEnumerable<CubeCoordinate> Match( Cell cell, CubeCoordinate direction ) {
+		var color = cell.block.color;
+		var matched = new List<CubeCoordinate>( 4 );
+		matched.Add( cell.position );
+
+		var current = cell.position + direction;
+		while ( map.TryGetValue( current, out cell ) ) {
+			if ( cell.block.color != color ) {
+				break;
+			}
+
+			matched.Add( current );
+			current += direction;
+		}
+
+		if ( matched.Count >= 3 ) {
+			return matched;
+		}
+		else {
+			return new CubeCoordinate[0];
+		}
+	}
+
+	private IEnumerable<Cell> FindSplashArea( CubeCoordinate target ) {
+		Cell cell = null;
+		foreach ( var direction in FlatTopDirection.around ) {
+			if ( map.TryGetValue( target + direction, out cell ) == false ) {
+				continue;
+			}
+
+			if ( cell.block == null ) {
+				continue;
+			}
+
+			yield return cell;
+		}
 	}
 
 	public Coroutine Fill() {

@@ -9,19 +9,26 @@ public class Game : MonoBehaviour {
 
 	IEnumerator Start () {
 		while ( true ) {
+			do {
+				yield return WaitForAnimation();
+				yield return null;
+				yield return board.Fill();
+			} while ( board.Match() == true );
+
 			yield return WaitForAnimation();
 			yield return StartCoroutine( WaitForInput() );
 
-			board.Swap( received );
+			yield return Swap();
 			if ( board.Match() == false ) {
-				board.Swap( received );
+				yield return Swap();
 				continue;
 			}
-
-			yield return WaitForAnimation();
-			yield return null;
-			yield return board.Fill();
 		}
+	}
+
+	private CustomYieldInstruction Swap() {
+		board.Swap( received );
+		return WaitForAnimation();
 	}
 
 	private CustomYieldInstruction WaitForAnimation() {

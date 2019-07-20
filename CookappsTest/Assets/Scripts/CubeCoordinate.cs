@@ -138,4 +138,25 @@ public struct CubeCoordinate {
 	public static CubeCoordinate operator/ ( float scala, CubeCoordinate right ) {
 		return right * (1 / scala);
 	}
+
+	public static bool operator== ( CubeCoordinate left, CubeCoordinate right ) {
+		return left.x == right.x
+			&& left.z == right.z;
+	}
+
+	public static bool operator!= ( CubeCoordinate left, CubeCoordinate right ) {
+		return !(left == right);
+	}
+
+	public override bool Equals( object obj ) {
+		if ( obj is CubeCoordinate ) {
+			return this == (CubeCoordinate)obj;
+		}
+
+		return base.Equals( obj );
+	}
+
+	public override int GetHashCode() {
+		return _x ^ _z;
+	}
 }

@@ -9,4 +9,12 @@ public class Block : MonoBehaviour {
 		cell.block = this;
 		transform.position = cell.transform.position;
 	}
+
+	public void Destroy() {
+		AnimScheduler.instance.Destroy( this );
+	}
+
+	public virtual void Splash() {
+		// do nothing
+	}
 }

@@ -2949,7 +2949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   templates:
-  - {fileID: 114207966407393352, guid: f1bc266078f600849b065275af533228, type: 2}
+  - {fileID: 114403742723223824, guid: f1bc266078f600849b065275af533228, type: 2}
   - {fileID: 114471226642605904, guid: e7ca0d2ece251fe4e99ccd52729494f2, type: 2}
   - {fileID: 114471226642605904, guid: 5ffc56aecce957c43a99d19fb282ff4c, type: 2}
   - {fileID: 114471226642605904, guid: 7c729ed2bbc95a743820692b60905f48, type: 2}
