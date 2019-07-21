@@ -52,7 +52,11 @@ public class Board : MonoBehaviour, IBeginDragHandler, IDragHandler {
 			}
 
 			foreach ( var direction in pullDirection ) {
-				matched.AddRange( Match( cell, direction ) );
+				matched.AddRange( Match( cell, GetLine( direction ), 3 ) );
+			}
+
+			foreach ( var cluster in clusters ) {
+				matched.AddRange( Match( cell, cluster, 4 ) );
 			}
 		}
 
@@ -70,22 +74,38 @@ public class Board : MonoBehaviour, IBeginDragHandler, IDragHandler {
 		return matched.Count > 0;
 	}
 
-	private IEnumerable<CubeCoordinate> Match( Cell cell, CubeCoordinate direction ) {
-		var color = cell.block.color;
-		var matched = new List<CubeCoordinate>( 4 );
-		matched.Add( cell.position );
+	private IEnumerable<CubeCoordinate> GetLine( CubeCoordinate direction ) {
+		for ( var i=1; ; ++i ) {
+			yield return direction * i;
+		}
+	}
 
-		var current = cell.position + direction;
-		while ( map.TryGetValue( current, out cell ) ) {
+	private CubeCoordinate[][] clusters = new [] {
+		new [] { FlatTopDirection.NW, FlatTopDirection.N, FlatTopDirection.NE },
+		new [] { FlatTopDirection.N, FlatTopDirection.NE, FlatTopDirection.SE },
+		new [] { FlatTopDirection.SW, FlatTopDirection.NW, FlatTopDirection.N },
+	};
+
+	private IEnumerable<CubeCoordinate> Match( Cell origin, IEnumerable<CubeCoordinate> diffs, int minimumMatchCount ) {
+		var color = origin.block.color;
+		var matched = new List<CubeCoordinate>( minimumMatchCount );
+		matched.Add( origin.position );
+
+		foreach ( var diff in diffs ) {
+			var current = origin.position + diff;
+			Cell cell = null;
+			if ( map.TryGetValue( current, out cell ) == false ) {
+				break;
+			}
+
 			if ( cell.block.color != color ) {
 				break;
 			}
 
 			matched.Add( current );
-			current += direction;
 		}
 
-		if ( matched.Count >= 3 ) {
+		if ( matched.Count >= minimumMatchCount ) {
 			return matched;
 		}
 		else {
